@@ -6,25 +6,23 @@
 //
 
 import Foundation
-
-//Don't change this
-var studentsAndScores = ["Amy": Int(readLine()!)!, "James": Int(readLine()!)!, "Helen": Int(readLine()!)!]
+/*Don't change this 라고 되어있지만
+ (readline()!)!을 Int로 바꿔야한다*/
+var studentsAndScores = ["Amy": 88, "James": 99, "Helen": 100]
 
 func highestScore(scores: [String: Int]) {
     
     //Write your code here.
-       var temp = 0
-//   key를 사용해 value가 dictionary에서 나오면 value는 optional이다. 그래서 !를 붙여준다
-    if scores["Amy"]! > scores["James"]!{
-      temp = scores["Amy"]!
-      } else {
-      temp = scores["James"]!
-      }
+//    values는 Dictionary의 value만 가져오게 하고, max는 구성요소 중 최대값을 가져온다
+    let maxScore = studentsAndScores.values.max()
 
-      if scores["Helen"]! > temp {
-      temp = scores["Helen"]!
-      print(temp)
-      } else {
-      print(temp)
-      }
-    }
+    print(maxScore!)
+
+        }
+//이 함수의 (scores: ["Amy : 88])의 역할을 잘 모르겠다
+/*scores는 parameter이고 ["Amy" : 88]은 argument이다.
+ 이 function 정의를 func 함수이름(parameter name: parameter type) {}
+ 이렇게 했으므로 함수 호출 시 함수이름(parameter: argument)
+ 이 양식을 가져와야 한다.
+ */
+highestScore(scores: ["Amy" : 88])
