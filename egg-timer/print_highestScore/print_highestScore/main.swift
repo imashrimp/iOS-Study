@@ -20,7 +20,7 @@ func highestScore(scores: [String: Int]) {
 
         }
 //이 함수의 (scores: ["Amy : 88])의 역할을 잘 모르겠다
-/*scores는 parameter이고 ["Amy" : 88]은 argument이다.
+/*scores는 parameter name이고 ["Amy" : 88]은 argument이다.
  이 function 정의를 func 함수이름(parameter name: parameter type) {}
  이렇게 했으므로 함수 호출 시 함수이름(parameter: argument)
  이 양식을 가져와야 한다.
