@@ -7,5 +7,10 @@
 
 import Foundation
 
-print("Hello, World!")
+var timer = 60
 
+var clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countdown", userInfo: nil, repeats: true)
+
+func countdown() {
+    timer--
+}

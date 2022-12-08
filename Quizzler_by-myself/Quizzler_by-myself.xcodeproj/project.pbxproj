@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170E346D29406420000DF67F /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 170E346C29406420000DF67F /* alarm_sound.mp3 */; };
-		1740D70B29348CD500FE36A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1740D70A29348CD500FE36A9 /* AppDelegate.swift */; };
-		1740D70D29348CD500FE36A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1740D70C29348CD500FE36A9 /* SceneDelegate.swift */; };
-		1740D70F29348CD500FE36A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1740D70E29348CD500FE36A9 /* ViewController.swift */; };
-		1740D71229348CD500FE36A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1740D71029348CD500FE36A9 /* Main.storyboard */; };
-		1740D71429348CD600FE36A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1740D71329348CD600FE36A9 /* Assets.xcassets */; };
-		1740D71729348CD600FE36A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1740D71529348CD600FE36A9 /* LaunchScreen.storyboard */; };
+		170E349B2941A3A4000DF67F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E349A2941A3A4000DF67F /* AppDelegate.swift */; };
+		170E349D2941A3A4000DF67F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E349C2941A3A4000DF67F /* SceneDelegate.swift */; };
+		170E349F2941A3A4000DF67F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E349E2941A3A4000DF67F /* ViewController.swift */; };
+		170E34A22941A3A4000DF67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170E34A02941A3A4000DF67F /* Main.storyboard */; };
+		170E34A42941A3A5000DF67F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170E34A32941A3A5000DF67F /* Assets.xcassets */; };
+		170E34A72941A3A5000DF67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170E34A52941A3A5000DF67F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		170E346C29406420000DF67F /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
-		1740D70729348CD500FE36A9 /* egg-timer-bymyself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "egg-timer-bymyself.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1740D70A29348CD500FE36A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1740D70C29348CD500FE36A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1740D70E29348CD500FE36A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1740D71129348CD500FE36A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1740D71329348CD600FE36A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1740D71629348CD600FE36A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1740D71829348CD600FE36A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		170E34972941A3A4000DF67F /* Quizzler_by-myself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quizzler_by-myself.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		170E349A2941A3A4000DF67F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		170E349C2941A3A4000DF67F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		170E349E2941A3A4000DF67F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		170E34A12941A3A4000DF67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		170E34A32941A3A5000DF67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		170E34A62941A3A5000DF67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		170E34A82941A3A5000DF67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1740D70429348CD500FE36A9 /* Frameworks */ = {
+		170E34942941A3A4000DF67F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1740D6FE29348CD500FE36A9 = {
+		170E348E2941A3A4000DF67F = {
 			isa = PBXGroup;
 			children = (
-				1740D70929348CD500FE36A9 /* egg-timer-bymyself */,
-				1740D70829348CD500FE36A9 /* Products */,
+				170E34992941A3A4000DF67F /* Quizzler_by-myself */,
+				170E34982941A3A4000DF67F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1740D70829348CD500FE36A9 /* Products */ = {
+		170E34982941A3A4000DF67F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1740D70729348CD500FE36A9 /* egg-timer-bymyself.app */,
+				170E34972941A3A4000DF67F /* Quizzler_by-myself.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1740D70929348CD500FE36A9 /* egg-timer-bymyself */ = {
+		170E34992941A3A4000DF67F /* Quizzler_by-myself */ = {
 			isa = PBXGroup;
 			children = (
-				1740D70A29348CD500FE36A9 /* AppDelegate.swift */,
-				1740D70C29348CD500FE36A9 /* SceneDelegate.swift */,
-				1740D70E29348CD500FE36A9 /* ViewController.swift */,
-				1740D71029348CD500FE36A9 /* Main.storyboard */,
-				1740D71329348CD600FE36A9 /* Assets.xcassets */,
-				170E346C29406420000DF67F /* alarm_sound.mp3 */,
-				1740D71529348CD600FE36A9 /* LaunchScreen.storyboard */,
-				1740D71829348CD600FE36A9 /* Info.plist */,
+				170E349A2941A3A4000DF67F /* AppDelegate.swift */,
+				170E349C2941A3A4000DF67F /* SceneDelegate.swift */,
+				170E349E2941A3A4000DF67F /* ViewController.swift */,
+				170E34A02941A3A4000DF67F /* Main.storyboard */,
+				170E34A32941A3A5000DF67F /* Assets.xcassets */,
+				170E34A52941A3A5000DF67F /* LaunchScreen.storyboard */,
+				170E34A82941A3A5000DF67F /* Info.plist */,
 			);
-			path = "egg-timer-bymyself";
+			path = "Quizzler_by-myself";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1740D70629348CD500FE36A9 /* egg-timer-bymyself */ = {
+		170E34962941A3A4000DF67F /* Quizzler_by-myself */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1740D71B29348CD600FE36A9 /* Build configuration list for PBXNativeTarget "egg-timer-bymyself" */;
+			buildConfigurationList = 170E34AB2941A3A5000DF67F /* Build configuration list for PBXNativeTarget "Quizzler_by-myself" */;
 			buildPhases = (
-				1740D70329348CD500FE36A9 /* Sources */,
-				1740D70429348CD500FE36A9 /* Frameworks */,
-				1740D70529348CD500FE36A9 /* Resources */,
+				170E34932941A3A4000DF67F /* Sources */,
+				170E34942941A3A4000DF67F /* Frameworks */,
+				170E34952941A3A4000DF67F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "egg-timer-bymyself";
-			productName = "egg-timer-bymyself";
-			productReference = 1740D70729348CD500FE36A9 /* egg-timer-bymyself.app */;
+			name = "Quizzler_by-myself";
+			productName = "Quizzler_by-myself";
+			productReference = 170E34972941A3A4000DF67F /* Quizzler_by-myself.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1740D6FF29348CD500FE36A9 /* Project object */ = {
+		170E348F2941A3A4000DF67F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					1740D70629348CD500FE36A9 = {
+					170E34962941A3A4000DF67F = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = 1740D70229348CD500FE36A9 /* Build configuration list for PBXProject "egg-timer-bymyself" */;
+			buildConfigurationList = 170E34922941A3A4000DF67F /* Build configuration list for PBXProject "Quizzler_by-myself" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,56 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 1740D6FE29348CD500FE36A9;
-			productRefGroup = 1740D70829348CD500FE36A9 /* Products */;
+			mainGroup = 170E348E2941A3A4000DF67F;
+			productRefGroup = 170E34982941A3A4000DF67F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1740D70629348CD500FE36A9 /* egg-timer-bymyself */,
+				170E34962941A3A4000DF67F /* Quizzler_by-myself */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1740D70529348CD500FE36A9 /* Resources */ = {
+		170E34952941A3A4000DF67F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1740D71729348CD600FE36A9 /* LaunchScreen.storyboard in Resources */,
-				1740D71429348CD600FE36A9 /* Assets.xcassets in Resources */,
-				170E346D29406420000DF67F /* alarm_sound.mp3 in Resources */,
-				1740D71229348CD500FE36A9 /* Main.storyboard in Resources */,
+				170E34A72941A3A5000DF67F /* LaunchScreen.storyboard in Resources */,
+				170E34A42941A3A5000DF67F /* Assets.xcassets in Resources */,
+				170E34A22941A3A4000DF67F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1740D70329348CD500FE36A9 /* Sources */ = {
+		170E34932941A3A4000DF67F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1740D70F29348CD500FE36A9 /* ViewController.swift in Sources */,
-				1740D70B29348CD500FE36A9 /* AppDelegate.swift in Sources */,
-				1740D70D29348CD500FE36A9 /* SceneDelegate.swift in Sources */,
+				170E349F2941A3A4000DF67F /* ViewController.swift in Sources */,
+				170E349B2941A3A4000DF67F /* AppDelegate.swift in Sources */,
+				170E349D2941A3A4000DF67F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1740D71029348CD500FE36A9 /* Main.storyboard */ = {
+		170E34A02941A3A4000DF67F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1740D71129348CD500FE36A9 /* Base */,
+				170E34A12941A3A4000DF67F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1740D71529348CD600FE36A9 /* LaunchScreen.storyboard */ = {
+		170E34A52941A3A5000DF67F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1740D71629348CD600FE36A9 /* Base */,
+				170E34A62941A3A5000DF67F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1740D71929348CD600FE36A9 /* Debug */ = {
+		170E34A92941A3A5000DF67F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -230,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		1740D71A29348CD600FE36A9 /* Release */ = {
+		170E34AA2941A3A5000DF67F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -284,7 +280,7 @@
 			};
 			name = Release;
 		};
-		1740D71C29348CD600FE36A9 /* Debug */ = {
+		170E34AC2941A3A5000DF67F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -292,19 +288,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "egg-timer-bymyself/Info.plist";
+				INFOPLIST_FILE = "Quizzler_by-myself/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexkwon.egg-timer-bymyself";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexkwon.Quizzler-by-myself";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		1740D71D29348CD600FE36A9 /* Release */ = {
+		170E34AD2941A3A5000DF67F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -320,19 +315,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "egg-timer-bymyself/Info.plist";
+				INFOPLIST_FILE = "Quizzler_by-myself/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexkwon.egg-timer-bymyself";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexkwon.Quizzler-by-myself";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,25 +337,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1740D70229348CD500FE36A9 /* Build configuration list for PBXProject "egg-timer-bymyself" */ = {
+		170E34922941A3A4000DF67F /* Build configuration list for PBXProject "Quizzler_by-myself" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1740D71929348CD600FE36A9 /* Debug */,
-				1740D71A29348CD600FE36A9 /* Release */,
+				170E34A92941A3A5000DF67F /* Debug */,
+				170E34AA2941A3A5000DF67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1740D71B29348CD600FE36A9 /* Build configuration list for PBXNativeTarget "egg-timer-bymyself" */ = {
+		170E34AB2941A3A5000DF67F /* Build configuration list for PBXNativeTarget "Quizzler_by-myself" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1740D71C29348CD600FE36A9 /* Debug */,
-				1740D71D29348CD600FE36A9 /* Release */,
+				170E34AC2941A3A5000DF67F /* Debug */,
+				170E34AD2941A3A5000DF67F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1740D6FF29348CD500FE36A9 /* Project object */;
+	rootObject = 170E348F2941A3A4000DF67F /* Project object */;
 }
