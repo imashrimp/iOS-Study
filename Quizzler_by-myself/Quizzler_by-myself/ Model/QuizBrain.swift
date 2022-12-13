@@ -30,10 +30,12 @@ struct QuizBrain {
     ]
     // 이건 quiz로 하는걸 트래킹하기 위함
     var questionNumber = 0
+    var score = 0
     
-    func checkAnswer(_ userAnswer: String) -> Bool  {
+    mutating func checkAnswer(_ userAnswer: String) -> Bool  {
         // inside parameter name is used inside of a function and external parameter name is used when we call the function
         if userAnswer == quiz[questionNumber].answer {
+            score += 1
             return true
         }else {
             return false
@@ -50,11 +52,22 @@ struct QuizBrain {
         return progress
     }
     
-    func nextQuestion() {
+/*
+ this method changes properties of struct QuizBrain so it needs mutating in front of func.
+ and this method changes the value of property 'var questionNumber = 0' to '+= 1'
+ */
+    mutating  func nextQuestion() {
         if questionNumber + 1 < quiz.count  {
             questionNumber += 1
         }else {
             questionNumber = 0
+            score = 0
         } 
     }
+    
+    func getScore() -> Int {
+        return score
+    }
+    
+
 }

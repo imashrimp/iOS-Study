@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
         }else {
             sender.backgroundColor = UIColor.red
         }
-        quizBrain.nextQuestion() 
+        quizBrain.nextQuestion()
        
 // repeat할 필요가 없으므로 false이고, egg-timer와 다르게 invalidate 할 이유가 없으므로 timer = Timer의 형태가 아님
        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
     @objc func updateUI()  {
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
 //        the way to back to the color of the buttons when we go to  the next question
             self.trueButton.backgroundColor = UIColor.clear
             self.falseButton.backgroundColor = UIColor.clear
