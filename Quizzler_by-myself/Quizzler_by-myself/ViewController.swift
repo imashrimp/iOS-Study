@@ -11,12 +11,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet   weak var trueButton: UIButton!
+    @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
-    
-//    it's called '2D array'
+     
+//    question 개수: 12개
     let quiz = [
-               Question(q: "A slug's blood is green.", a: "True"),
+              Question(q: "A slug's blood is green.", a: "True"),
               Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
               Question(q: "The total surface area of two human lungs is approximately 70 square metres.", a: "True"),
               Question(q: "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", a: "True"),
@@ -38,7 +38,6 @@ class ViewController: UIViewController {
     
     var questionNumber = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,9 +50,9 @@ class ViewController: UIViewController {
         let actualAnswer = quiz[questionNumber].answer
         
         if userAnswer == actualAnswer {
-            print("Right")
+            sender.backgroundColor = UIColor.green
         }else {
-            print("Wrong")
+            sender.backgroundColor = UIColor.red
         }
 
         if questionNumber + 1 < quiz.count  {
@@ -61,12 +60,17 @@ class ViewController: UIViewController {
         }else {
             questionNumber = 0
         }
-        
-        updateUI()
+// repeat할 필요가 없으므로 false이고, egg-timer와 다르게 invalidate 할 이유가 없으므로 timer = Timer의 형태가 아님
+       Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
-    func updateUI()  {
-        questionLabel.text = quiz[questionNumber].text 
+//    위의 #selector가 method인 updateUI를 가리키는데 이는 objective-c에 없으므로 아래의 func 앞에 @objc를 붙임
+    @objc func updateUI()  {
+        questionLabel.text = quiz[questionNumber].text
+//        the way to back to the color of the buttons when we go to  the next question
+            self.trueButton.backgroundColor = UIColor.clear
+            self.falseButton.backgroundColor = UIColor.clear
+        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
     }
     
 }
