@@ -1,20 +1,13 @@
- //
-//  ViewController.swift
+//
+//  QuizBrain.swift
 //  Quizzler_by-myself
 //
-//  Created by 권현석 on 2022/12/08.
+//  Created by 권현석 on 2022/12/13.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
-     
-//    question 개수: 12개
+struct QuizBrain {
     let quiz = [
               Question(q: "A slug's blood is green.", a: "True"),
               Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -35,42 +28,15 @@ class ViewController: UIViewController {
         ["Three + Eight is less than Ten", "False"]
          */
     ]
-    
+// 이건 quiz로 하는걸 트래킹하기 위함
     var questionNumber = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        updateUI()
-    }
-    
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
-
-        let userAnswer = sender.currentTitle
-        let actualAnswer = quiz[questionNumber].answer
-        
-        if userAnswer == actualAnswer {
-            sender.backgroundColor = UIColor.green
+    func checkAnswer(_ userAnswer: String) {
+// inside parameter name is used inside of a function and external parameter name is used when we call the function
+        if userAnswer == quiz[questionNumber].answer {
+//            User got it right
         }else {
-            sender.backgroundColor = UIColor.red
+//             User got it wrong 
         }
-
-        if questionNumber + 1 < quiz.count  {
-            questionNumber += 1
-        }else {
-            questionNumber = 0
-        }
-// repeat할 필요가 없으므로 false이고, egg-timer와 다르게 invalidate 할 이유가 없으므로 timer = Timer의 형태가 아님
-       Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
-    
-//    위의 #selector가 method인 updateUI를 가리키는데 이는 objective-c에 없으므로 아래의 func 앞에 @objc를 붙임
-    @objc func updateUI()  {
-        questionLabel.text = quiz[questionNumber].text
-//        the way to back to the color of the buttons when we go to  the next question
-            self.trueButton.backgroundColor = UIColor.clear
-            self.falseButton.backgroundColor = UIColor.clear
-        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
-    }
-    
 }
