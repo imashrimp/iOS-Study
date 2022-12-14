@@ -28,24 +28,25 @@ class ViewController: UIViewController {
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         let userAnswer = sender.currentTitle!
+        
         // this line means  output of the function checkAnswer
         let userGotItRight = quizBrain.checkAnswer(userAnswer: userAnswer)
-        
         if userGotItRight  {
             sender.backgroundColor = UIColor.green
         }else {
             sender.backgroundColor = UIColor.red
         }
-        quizBrain.nextQuestionAndAnswer()
+        
+        quizBrain.nextQuestion()
         
         // repeat할 필요가 없으므로 false이고, egg-timer와 다르게 invalidate 할 이유가 없으므로 timer = Timer의 형태가 아님
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
-    
     //    위의 #selector가 method인 updateUI를 가리키는데 이는 objective-c에 없으므로 아래의 func 앞에 @objc를 붙임
+    
     @objc func updateUI()  {
         questionLabel.text = quizBrain.getQuestionText()
-       
+        
         let answerChoices = quizBrain.getAnswers()
         Choice1.setTitle(answerChoices[0], for: .normal)
         Choice2.setTitle(answerChoices[1], for: .normal)
@@ -53,10 +54,12 @@ class ViewController: UIViewController {
         
         progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
-        //        the way to back to the color of the buttons when we go to  the next question
-        self.Choice1.backgroundColor = UIColor.clear
-        self.Choice2.backgroundColor = UIColor.clear
-        self.Choice3.backgroundColor = UIColor.clear
+        
+        //        the way to back to the color of the buttons when we go to the next question
+//        여기서 self는 위의 Choice1,2,3과 구분하기 위해 붙인것이다. 근데 이 두 그룹(?)은 서로 다른 일을 하는데도 self를 붙일 필요가 있는가?
+        Choice1.backgroundColor = UIColor.clear
+        Choice2.backgroundColor = UIColor.clear
+        Choice3.backgroundColor = UIColor.clear
     }
     
 }
