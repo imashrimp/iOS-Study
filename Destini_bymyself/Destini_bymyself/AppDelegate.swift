@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Destini_bymyself
+//  Destini_byMyself
 //
-//  Created by 권현석 on 2022/12/14.
+//  Created by 권현석 on 2022/12/15.
 //
 
 import UIKit
