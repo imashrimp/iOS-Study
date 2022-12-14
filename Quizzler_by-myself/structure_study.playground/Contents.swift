@@ -14,7 +14,7 @@ struct Town {
     var citizen: [String]
     var resources: [String: Int]
     
-    init(townName: String, people: [String], stats: [String: Int ]) {
+    init(name: String, citizen: [String], resources: [String: Int ]) {
 /*
  when i initialize name of the properties i should make the matched name to be different
  or by put the 'self' input과 parameter를 구별 할 수 있다

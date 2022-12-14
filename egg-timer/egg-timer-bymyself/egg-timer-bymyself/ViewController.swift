@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 /*
  progress attribute가 Float unit이다. 그래서 secondsPassed / totalTime 하기 전 각각을 Float unit으로 바꿔줘야 한다. 다른 방법으로는 secondsPassed, totalTime을 변수 선언 할 때 Float unit으로 설정하는 방법이 있다.
  */
-            progressBar.progress = Float(secondsPassed) / Float(totalTime)
+             
         }else {
             timer.invalidate()
             titleLabel.text = "DONE"
