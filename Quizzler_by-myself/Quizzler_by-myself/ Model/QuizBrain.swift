@@ -22,7 +22,7 @@ struct QuizBrain {
         Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: "False"),
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
         /*
-         just before using structure
+         just before using structure i used 2D array
          ["Four + Two is equal to Six", "True"],
          ["Five - Three is greater than One", "True"],
          ["Three + Eight is less than Ten", "False"]
@@ -32,6 +32,24 @@ struct QuizBrain {
     var questionNumber = 0
     var score = 0
     
+    
+    // 이 method는 QuizBrain struct의 property(questionNumber)를 바꾸므로 mutating func으로 선언함.
+    mutating  func nextQuestion() {
+        if questionNumber + 1 < quiz.count  {
+            questionNumber += 1
+        }else {     //else는 퀴즈 초기화 위함
+            questionNumber = 0
+            score = 0
+        }
+    }
+    
+    //        questionLabel.text = quiz[questionNumber].text
+    //    퀴즈를 순서대로 바꾸는 method
+    func getQuestionText() -> String {
+        return quiz[questionNumber].text
+    }
+    
+    // 정답 맞추고 스코어 기록 method
     mutating func checkAnswer(_ userAnswer: String) -> Bool  {
         // inside parameter name is used inside of a function and external parameter name is used when we call the function
         if userAnswer == quiz[questionNumber].answer {
@@ -42,32 +60,16 @@ struct QuizBrain {
         }
     }
     
-    //        questionLabel.text = quiz[questionNumber].text
-    func getQuestionText() -> String {
-        return quiz[questionNumber].text
-    }
-    
+    // ProgressionBar 채우는 method
     func getProgress() -> Float {
         let progress = Float(questionNumber + 1) / Float(quiz.count)
         return progress
     }
     
-/*
- this method changes properties of struct QuizBrain so it needs mutating in front of func.
- and this method changes the value of property 'var questionNumber = 0' to '+= 1'
- */
-    mutating  func nextQuestion() {
-        if questionNumber + 1 < quiz.count  {
-            questionNumber += 1
-        }else {
-            questionNumber = 0
-            score = 0
-        } 
-    }
-    
+    //    스코어 output위한 method
     func getScore() -> Int {
         return score
     }
     
-
+    
 }
