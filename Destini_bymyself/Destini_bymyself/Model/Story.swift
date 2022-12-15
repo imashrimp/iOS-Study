@@ -11,10 +11,10 @@ struct Story {
     let choice1 : String
     let choice2 : String
     
-    init(title: String, choice1: String, choice2: String) {
-        self.title = title
-        self.choice1 = choice1
-        self.choice2 = choice2
+    init(t: String, c1: String, c2: String) {
+        title = t
+        choice1 = c1
+        choice2 = c2
     }
 }
 
