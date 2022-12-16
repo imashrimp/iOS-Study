@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
     var storyBrain = StoryBrain()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func choiceMade(_ sender: UIButton) {
-        //        currentTitle 왜 옵셔널이 된거지? storyBrain에 structure 만들기 전에는 옵셔널 아니였음
-        storyBrain.nextStory(userChoice: sender.currentTitle!)
         
+        storyBrain.nextStory(userChoice: sender.currentTitle!)
         
         updateUI()
     }
@@ -36,5 +35,7 @@ class ViewController: UIViewController {
         choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
         choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
     }
+    
+    
 }
 
