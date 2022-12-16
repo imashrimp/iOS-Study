@@ -93,6 +93,7 @@
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-Uq-oam">
                                         <rect key="frame" x="0.0" y="763" width="374" height="51"/>
+                                        <color key="backgroundColor" red="0.38431372549019605" green="0.37647058823529411" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="0s2-im-PuL"/>
                                         </constraints>
@@ -101,6 +102,9 @@
                                         <state key="normal" title="CALCULATE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculatedPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aiP-I1-4Rv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -120,7 +124,9 @@
                     </view>
                     <connections>
                         <outlet property="heightLabel" destination="Qof-Ma-g5D" id="EgB-M8-OHI"/>
+                        <outlet property="heightSlider" destination="zqo-g3-7FA" id="YPG-sq-44y"/>
                         <outlet property="weightLabel" destination="oYY-OA-pKy" id="DF8-PL-KgQ"/>
+                        <outlet property="weightSlider" destination="Eg5-Uy-xbW" id="i3g-B8-Bgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
