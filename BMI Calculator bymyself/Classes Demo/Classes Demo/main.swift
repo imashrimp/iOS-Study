@@ -1,11 +1,14 @@
 
-let skeleton = Enemy()
- 
+var skeleton1 = Enemy(health: 100, attackStrength: 10)
+var skeleton2 = skeleton1
 
-let dragon = Dragon()
-dragon.move()
-dragon.attack()
-dragon.talk(speech: "My teeth are sword! My claws are spears!, My wings are a hurricane!")
-dragon.health
-dragon.attackStrength
+skeleton1.takeDamage(amount: 10)
+
+skeleton1.takeDamage(amount: 10)
+skeleton2.takeDamage(amount: 10)
+
+
+
+print(skeleton1 .health)
+print(skeleton2.health)
 
