@@ -41,8 +41,14 @@ class ViewController: UIViewController {
         let weight = weightSlider.value
         
 //        power function -> pow(a, b)이는 a^b를 만들어 낼 수 있다.
-        let bmi = (weight / pow(height, 2)) 
-        print(bmi)
+        let bmi = (weight / pow(height, 2))  
+
+         let secondVC = SecondViewController()
+//        SecondViewController class에 bmi property를 가져왔다.
+        secondVC.bmiValue = String(format: "%.1f", bmi )
+        
+//        첫 스크린에서 두번째 스크린으로 전환
+        self.present(secondVC, animated: true, completion: nil)
     }
     
     
