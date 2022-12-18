@@ -9,8 +9,9 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     
-//아래 calculatedPressed가 실행되었을 때 bmiValue의 값을 받아오기 위한 변수이다.
-    var bmiValue = "0.0"
+    var calculatorBrain = CalculatorBrain() 
+    
+    
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -43,12 +44,9 @@ class CalculateViewController: UIViewController {
         let height = heightSlider.value
         let weight = weightSlider.value
         
-//        power function -> pow(a, b)이는 a^b를 만들어 낼 수 있다.
-        let bmi = (weight / pow(height, 2))
-        bmiValue = String(format: "%.1f", bmi)
-
+        calculatorBrain.calculate BMI(height: height, weight: weight)
 //        segue를 실행하기 위한 메서드이고, withIdentifier는 segue의 이름, sender에는 이 segue를 실행하는 viewController를 넣어준다. 
-        self.performSegue(withIdentifie r: "goToResult ", sender: self)
+     performSegue(withIdentifier: "goToResult ", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,7 +55,7 @@ class CalculateViewController: UIViewController {
 //            destinationVC, destination의 타입은 UIViewConroller인데, bmiValue는 ResultController에만 있는거라 destionation이 ResultViewController를 가리키도록(narrow down) 하기 위해  as! ResultViewController를 사용한다. as는 UIViewController를 ResultViewController로  castdown하는 것이다.
             let destinationVC = segue.destination as! ResultViewController
 //            왼쪽은 ResultViewController의 bmiValue이고, 오른쪽은 CalculateViewController의 bmiValue이다.
-            destinationVC.bmiValue = bmiValue
+            destinationVC.bmiValue = calculatorBrain.getBMIValue()
         }
     }
     
