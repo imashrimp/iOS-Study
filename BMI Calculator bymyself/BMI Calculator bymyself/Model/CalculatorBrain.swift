@@ -5,21 +5,41 @@
 //  Created by 권현석 on 2022/12/18.
 //
 
-import Foundation
+import UIKit
 
 struct CalculatorBrain {
     
-//    calculateBMI에서 bmi 값을 가져오기 위한 변수
-    var bmi: Float = 0.0
+    //    calculateBMI에서 bmi 값을 가져오기 위한 변수
+    var bmi: BMI?
     
+    
+    func getBMIValue() -> String  {
+        
+        let bmiTo1DecimalPlace = String(format: "%.1f", bmi?.value ?? 0.0 )
+        return bmiTo1DecimalPlace
+        
+    }
+    
+    func getAdvice() -> String {
+        return bmi?.advice ?? "No advice."
+    }
+    
+    func getColor () -> UIColor{
+        return bmi?.color ?? UIColor.white
+    }
     
     mutating func calculateBMI(height: Float, weight: Float ) {
-        bmi = weight / (height * height)
+        let bmiValue = weight / (height * height)
+        
+        if bmiValue < 18.5 {
+            bmi = BMI(value: bmiValue, advice: "Eat more!", color: UIColor.blue) 
+        }else if bmiValue < 24.9 {
+            bmi = BMI(value: bmiValue, advice: "Fit as a fiddle!", color: UIColor.green)
+        }else {
+            bmi = BMI(value: bmiValue, advice: "Eat less!", color: UIColor.red)
+        }
     }
-     
-    func getBMIValue() -> String  {
-        let bmiTo1DecimalPlace = String(format: "%.1f", bmi)
-        return bmiTo1DecimalPlace
-    }
+    
+    
     
 }
