@@ -11,8 +11,6 @@ class CalculateViewController: UIViewController {
     
     var calculatorBrain = CalculatorBrain()
     
-    
-    
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightSlider: UISlider!
@@ -20,8 +18,6 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     
@@ -52,9 +48,13 @@ class CalculateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        아래의  은 segue가 작동했을 때, initialise된 viewController가 될 것이다
         if segue.identifier == "goToResult" {
+            
+            
             //            destinationVC, destination의 타입은 UIViewConroller인데, bmiValue는 ResultController에만 있는거라 destionation이 ResultViewController를 가리키도록(narrow down) 하기 위해  as! ResultViewController를 사용한다. as는 UIViewController를 ResultViewController로  castdown하는 것이다.
             let destinationVC = segue.destination as! ResultViewController
-            //            왼쪽은 ResultViewController의 bmiValue이고, 오른쪽은 CalculateViewController의 bmiValue이다.
+            
+            
+            //            왼쪽은 ResultViewController의 bmiValue이고, 오른쪽은 CalculateViewBrain의 bmiValue이다.
             destinationVC.bmiValue = calculatorBrain.getBMIValue()
             destinationVC.advice = calculatorBrain.getAdvice()
             destinationVC.color = calculatorBrain.getColor()
@@ -62,4 +62,3 @@ class CalculateViewController: UIViewController {
     }
     
 }
-

@@ -8,8 +8,7 @@
 import UIKit
 
 struct CalculatorBrain {
-    
-    //    calculateBMI에서 bmi 값을 가져오기 위한 변수
+
     var bmi: BMI?
     
     
