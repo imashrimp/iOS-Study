@@ -158,7 +158,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.69019607843137254" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -205,6 +205,7 @@
                         <outlet property="tenPctButton" destination="6ug-Do-OEf" id="7fW-pO-pKt"/>
                         <outlet property="twentyPctButton" destination="zEB-C0-3OJ" id="kRx-dd-o78"/>
                         <outlet property="zeroPctButton" destination="a9y-Fr-dxK" id="K72-li-FPE"/>
+                        <segue destination="P5U-mH-GJK" kind="presentation" identifier="goToResult" id="vad-Ic-TMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -216,7 +217,7 @@
             <objects>
                 <viewController id="P5U-mH-GJK" customClass="ResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Is-ik-sAH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGA-ZR-3AD">
@@ -253,7 +254,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5t-8A-aqh">
-                                <rect key="frame" x="107" y="808" width="200" height="54"/>
+                                <rect key="frame" x="107" y="784" width="200" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bmH-vh-pDg"/>
@@ -298,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSh-V6-Bjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="549" y="3"/>
+            <point key="canvasLocation" x="694" y="3"/>
         </scene>
     </scenes>
     <resources>
