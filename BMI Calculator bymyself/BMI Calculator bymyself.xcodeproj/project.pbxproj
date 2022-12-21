@@ -30,6 +30,7 @@
 		176AE804294EDB8600FA2D13 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		176AE806294EF44100FA2D13 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		176AE81C295043F200FA2D13 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
+		17C6A3062952DAEA004E7234 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		1755BFFE294BD22F00841A26 = {
 			isa = PBXGroup;
 			children = (
+				17C6A3062952DAEA004E7234 /* readme.md */,
 				1755C009294BD22F00841A26 /* BMI Calculator bymyself */,
 				1755C008294BD22F00841A26 /* Products */,
 			);
