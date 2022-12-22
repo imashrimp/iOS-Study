@@ -205,7 +205,7 @@
                         <outlet property="tenPctButton" destination="6ug-Do-OEf" id="7fW-pO-pKt"/>
                         <outlet property="twentyPctButton" destination="zEB-C0-3OJ" id="kRx-dd-o78"/>
                         <outlet property="zeroPctButton" destination="a9y-Fr-dxK" id="K72-li-FPE"/>
-                        <segue destination="P5U-mH-GJK" kind="presentation" identifier="goToResult" id="vad-Ic-TMc"/>
+                        <segue destination="P5U-mH-GJK" kind="presentation" identifier="goToResult" id="t4v-NR-Zw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -215,7 +215,7 @@
         <!--Result View Controller-->
         <scene sceneID="1hT-uh-07h">
             <objects>
-                <viewController id="P5U-mH-GJK" customClass="ResultViewController" sceneMemberID="viewController">
+                <viewController id="P5U-mH-GJK" customClass="ResultViewController" customModule="Tipsy_bymyself" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Is-ik-sAH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,7 +266,7 @@
                                     <color key="titleColor" red="0.97254901960784312" green="1" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="recalculatePressed:" destination="P5U-mH-GJK" eventType="touchUpInside" id="Cnw-YE-thG"/>
+                                    <action selector="recalculatePressed:" destination="P5U-mH-GJK" eventType="touchUpInside" id="nTb-3M-i8j"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIw-rf-IBe">
@@ -293,8 +293,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="settingsLabel" destination="RIw-rf-IBe" id="4fd-mc-bNZ"/>
-                        <outlet property="totalLabel" destination="moD-bB-RPf" id="Uss-h2-e2t"/>
+                        <outlet property="settingsLabel" destination="RIw-rf-IBe" id="PCb-SG-lfA"/>
+                        <outlet property="totalLabel" destination="moD-bB-RPf" id="9my-8m-mQk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSh-V6-Bjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

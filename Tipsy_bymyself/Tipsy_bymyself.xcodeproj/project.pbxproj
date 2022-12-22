@@ -13,7 +13,7 @@
 		176AE832295054B200FA2D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176AE830295054B200FA2D13 /* Main.storyboard */; };
 		176AE834295054B200FA2D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176AE833295054B200FA2D13 /* Assets.xcassets */; };
 		176AE837295054B200FA2D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176AE835295054B200FA2D13 /* LaunchScreen.storyboard */; };
-		176AE83F295178BB00FA2D13 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176AE83E295178BB00FA2D13 /* ResultViewController.swift */; };
+		17C6A3082952F0F7004E7234 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C6A3072952F0F7004E7234 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		176AE833295054B200FA2D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		176AE836295054B200FA2D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		176AE838295054B200FA2D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		176AE83E295178BB00FA2D13 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		17C6A3072952F0F7004E7234 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				176AE82E295054B200FA2D13 /* CalculatorViewController.swift */,
-				176AE83E295178BB00FA2D13 /* ResultViewController.swift */,
+				17C6A3072952F0F7004E7234 /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 				176AE82F295054B200FA2D13 /* CalculatorViewController.swift in Sources */,
 				176AE82B295054B200FA2D13 /* AppDelegate.swift in Sources */,
 				176AE82D295054B200FA2D13 /* SceneDelegate.swift in Sources */,
-				176AE83F295178BB00FA2D13 /* ResultViewController.swift in Sources */,
+				17C6A3082952F0F7004E7234 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
