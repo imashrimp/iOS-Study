@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,7 +41,7 @@
                                                 <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                                 <color key="backgroundColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-ko-wUV">
                                                 <rect key="frame" x="334" y="0.5" width="40" height="38.5"/>
@@ -51,12 +52,15 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hF-DM-JAo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JZz-uM-dLI">
                                         <rect key="frame" x="254" y="49.5" width="120" height="120.5"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <color key="tintColor" name=" weatherColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="5nF-eh-nwj"/>
                                             <constraint firstAttribute="width" constant="120" id="gy2-8r-Cj5"/>
@@ -111,6 +115,12 @@
                             <constraint firstItem="s6Y-bi-T7w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zmy-i2-42y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="gSw-fj-rzo" id="uOf-ZL-nlk"/>
+                        <outlet property="conditionImageView" destination="JZz-uM-dLI" id="44B-BO-Qy3"/>
+                        <outlet property="searchTextField" destination="6y5-xv-WEa" id="Bwj-8R-VA1"/>
+                        <outlet property="temperatureLabel" destination="hXM-3f-2pr" id="Rua-xB-YgK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,10 +128,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1377" height="1377"/>
+        <image name="background" width="662" height="662"/>
         <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
+        <namedColor name=" weatherColor">
+            <color red="0.14900000393390656" green="0.25900000333786011" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
