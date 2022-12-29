@@ -9,7 +9,7 @@ import UIKit
 
 
 /*
- (Protocol )UITextFieldDelegate => text field에 입련된 text를 편집, 관리 확인하는 optional method이다.
+ (Protocol)UITextFieldDelegate => text field에 입련된 text를 편집, 관리 확인하는 optional method이다.
  */
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    
+    var weatherManager = WeatherManager()
+    
     
     
     override func viewDidLoad() {
@@ -66,10 +69,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     /*
-     아래 메서드는 text field에 입력이 끝나면 작동한다. 이는 go, search 버튼이 작동하면 text field를 원 상태로 돌린다.
+     아래 메서드는 text field에 입력이 끝나면 작동한다. 이는 go, search 버튼이 작동하면 text field를 원 상태(빈칸 or Search)로 돌린다.
      이 메서드는 반복을 줄이기 위함인데 이 메서드가 없으면 searchPressed, textFieldShouldReturn 메서드에 textField.text != ""가 각각 있어야한다.
      */
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+//        if let은 optional을 unwrap하기 위함이다.
+        if let city = searchTextField .text {
+            weatherManager.fetchWeather(cityName: city )
+        }
+        
+        
         searchTextField.text = ""
     }
     
