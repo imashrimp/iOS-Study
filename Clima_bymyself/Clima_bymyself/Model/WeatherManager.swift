@@ -16,34 +16,44 @@ struct WeatherManager {
     }
     
     func performRequest(urlString: String) {
-//        1. Create a URL
-         
+        //        1. Create a URL
+        
         if let url = URL(string: urlString) {
-//        2. Create a URLSession
+            //        2. Create a URLSession
             
             let session = URLSession(configuration: .default)
-
-//        3. Give the session a task
             
-            let task = session.dataTask(with: url, completionHandler: handle(data:resoponse:error:) )
+            //        3. Give the session a task
             
-//        4. Start the task
-//           resume()는 새로 이니셜라이징 된 업무는 지연된 상태로 시작하는데, 그 업무를 시작하기 위해서는 resume() 메서드가 필요하다.
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let safeData = data {
+                    //closure 내부에서는 현재 클래스를 가리키는 메서드라도 self를 붙인다.
+                    self.parseJSON(weatherData: safeData )
+                }
+            }
+            
+            //        4. Start the task
+            //           resume()는 새로 이니셜라이징 된 업무는 지연된 상태로 시작하는데, 그 업무를 시작하기 위해서는 resume() 메서드가 필요하다.
             task.resume()
         }
         
     }
-    
-    func handle(data: Data?, resoponse: URLResponse?, error: Error?) {
-        if error != nil {
-            print(error!)
-            return
-        }
-        
-        if let safeData = data {
-            let dataString = String(data: safeData, encoding: .utf8)
-            print(dataString )
+    func parseJSON(weatherData: Data) {
+        let decoder = JSONDecoder()
+        do {
+            //        WeatherData 자리는 data type이 들어가는데 WeatherData.self를 함으로써 WeatherData는 object에서 data type이 된다.
+//            decode 메서드가 throw를 하는데, 이는 데이터가 JSON이 아닌 경우 오류를 throw함을 의미한다.
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+//            decodedData의 data type이 Weatherdata라서 이는 name property를 받아올 수 있다.
+            print(decodedData.main.temp)
+            print(decodedData.weather[0].description)
+        } catch {
+            print(error)
         }
     }
-    
 }
