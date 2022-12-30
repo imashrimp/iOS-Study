@@ -47,13 +47,22 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             //        WeatherData 자리는 data type이 들어가는데 WeatherData.self를 함으로써 WeatherData는 object에서 data type이 된다.
-//            decode 메서드가 throw를 하는데, 이는 데이터가 JSON이 아닌 경우 오류를 throw함을 의미한다.
+            //            decode 메서드가 throw를 하는데, 이는 데이터가 JSON이 아닌 경우 오류를 throw함을 의미한다.
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-//            decodedData의 data type이 Weatherdata라서 이는 name property를 받아올 수 있다.
+            //            decodedData의 data type이 Weatherdata라서 이는 name property를 받아올 수 있다.
             print(decodedData.main.temp)
-            print(decodedData.weather[0].description)
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
+            let name = decodedData.name
+            
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+            
+            print(weather.getConditionName(weatherId: id) )
+            
         } catch {
             print(error)
         }
     }
+    
+    
 }
