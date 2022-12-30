@@ -7,8 +7,14 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(weather: WeatherModel)
+}
+
 struct WeatherManager {
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=0e6e6e952dc0bc49af8b3e8f009c98d7&units=metric"
+    
+    var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -33,7 +39,10 @@ struct WeatherManager {
                 
                 if let safeData = data {
                     //closure 내부에서는 현재 클래스를 가리키는 메서드라도 self를 붙인다.
-                    self.parseJSON(weatherData: safeData )
+                    if let weather = self.parseJSON(weatherData: safeData ) {
+//                        이게 closure 안에 있다고 하는데 closure가 어디서부터 시작하는거지?
+                        self.delegate?.didUpdateWeather(weather: weather )
+                    }
                 }
             }
             
@@ -43,7 +52,7 @@ struct WeatherManager {
         }
         
     }
-    func parseJSON(weatherData: Data) {
+    func parseJSON(weatherData: Data)-> WeatherModel?  {
         let decoder = JSONDecoder()
         do {
             //        WeatherData 자리는 data type이 들어가는데 WeatherData.self를 함으로써 WeatherData는 object에서 data type이 된다.
@@ -56,12 +65,12 @@ struct WeatherManager {
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-            
-//            Weather Model에 있는 computed property(conditionName)에 의해 가능해진다.    
-            print(weather.temperatureString)
+             
+            return weather
             
         } catch {
             print(error)
+            return nil
         }
     }
     

@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+ 
 
 /*
  (Protocol)UITextFieldDelegate => text field에 입련된 text를 편집, 관리 확인하는 optional method이다.
  */
-class ViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherManager.delegate = self
         /*
          user가 text field에 입력했을 때 text field가 VC에게 무슨일이 생겼는지 알린다
          여기서 무슨일은
@@ -83,6 +84,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchTextField.text = ""
     }
     
+    
+    func didUpdateWeather(weather: WeatherModel) {
+        print(weather.temperature )
+    }
 }
 
 
