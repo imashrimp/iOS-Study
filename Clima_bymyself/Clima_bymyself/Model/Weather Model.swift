@@ -14,16 +14,14 @@ struct WeatherModel {
     let cityName: String
     let temperature: Double
     
-//    computed property
-    var conditionName = String {
-        return
+    var temperatureString: String {
+        return String(format: "%.1f", temperature  )
     }
     
- 
     
-    func getConditionName(weatherId: Int)-> String {
-        //          switch statement를 써서 Int에 맞는 String을 뽑아내고 그 값으로 위의 parseJSON 메서드를 실행했을 때 openweathermap에서 표시된 숫자에 맞는 날씨 기호에 맞게 storyboard에 도형의 이름을             print(getConditionName(weatherId: id))로 뽑아내자
-        switch weatherId {
+//    아래의 property는 computed property라 불리고 이 property가 output or return해야하는 값을 {}안에 있는  return 뒤에 적어준다. 
+    var conditionName: String {
+         switch conditionId  {
         case 200 ... 232:
             return "could.bolt"
         case 300 ... 321, 520 ... 513:
@@ -41,5 +39,6 @@ struct WeatherModel {
         default:
             return "cloud"
         }
-    } 
+    }
+    
 }

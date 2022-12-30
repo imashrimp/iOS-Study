@@ -57,7 +57,8 @@ struct WeatherManager {
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             
-            print(weather.getConditionName(weatherId: id) )
+//            Weather Model에 있는 computed property(conditionName)에 의해 가능해진다.    
+            print(weather.temperatureString)
             
         } catch {
             print(error)
