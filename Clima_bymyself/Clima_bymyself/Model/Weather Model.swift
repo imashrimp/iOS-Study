@@ -15,11 +15,11 @@ struct WeatherModel {
     let temperature: Double
     
     var temperatureString: String {
-        return String(format: "%.1f", temperature  )
+        return String(format: "%.1f", temperature)
     }
     
     
-//    아래의 property는 computed property라 불리고 이 property가 output or return해야하는 값을 {}안에 있는  return 뒤에 적어준다. 
+//    아래의 property는 comp uted property라 불리고 이 property가 output or return해야하는 값을 {}안에 있는  return 뒤에 적어준다.
     var conditionName: String {
          switch conditionId  {
         case 200 ... 232:

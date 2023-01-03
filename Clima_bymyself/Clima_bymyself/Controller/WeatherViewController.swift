@@ -12,7 +12,7 @@ import UIKit
  (Protocol)UITextFieldDelegate => text field에 입련된 text를 편집, 관리 확인하는 optional method이다.
  */
 class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
-    
+     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -25,6 +25,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        아래의 코드는 Weather Manager에서 peformRequest 메서드의 역할을 viewController에서 볼 수 있도록 하는 것이다. 즉, Weather Mananger certificate의 bleep를 veiw controller가 갖는 것을 의미한다.
         weatherManager.delegate = self
         /*
          user가 text field에 입력했을 때 text field가 VC에게 무슨일이 생겼는지 알린다
@@ -44,6 +45,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         print(searchTextField.text!)
     }
     
+//    아래 메서드는 delegate에 'return' 버튼이 눌렸을 때 text field가 무언가를 해야하는지 물어보게 한다. 그리고 아래의 메서드는 return 버튼에 대한 IBAction과 같다. 
     /*
      위의 UITextFieldDelegate, searchTextField.delegate = self로 아래 메서드를 만들고 이 메서드는 delegate(현재 class)에 text field가 button pressed의 과정을 처리해야하는지 묻는다.
      => text field: "VC야 유저가 return키를 눌렀는데 뭘 할까?"
@@ -77,7 +79,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         
 //        if let은 optional을 unwrap하기 위함이다.
         if let city = searchTextField .text {
-            weatherManager.fetchWeather(cityName: city )
+//            WeatherManager에서 fetchWeather 메서드의 cityName에 text field에 입력된 도시 이름을 가져오기 위한 impement이다. 
+            weatherManager.fetchWeather(cityName: city)
         }
         
         
@@ -85,8 +88,17 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     }
     
     
-    func didUpdateWeather(weather: WeatherModel) {
-        print(weather.temperature )
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+//        아래의 DispatchQueue는 날씨 데이터를 불러오는건 background에서 이뤄지기 때문에 시간이 걸리는데 이때 app 사용자는 app이 멈췄다고 느낄 수 있다 그래서 아래의 메서드를 작성해주는 것이고 '{}'안의 self는 closure라서 써주는 것이다.
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString 
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+        }
+ 
+    }
+    
+    func didFailWithError(error: Error) {
+        print( )
     }
 }
 

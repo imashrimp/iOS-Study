@@ -8,7 +8,8 @@
 import Foundation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
@@ -18,10 +19,10 @@ struct WeatherManager {
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(urlString: urlString)
+        performRequest(with: urlString)
     }
     
-    func performRequest(urlString: String) {
+    func performRequest(with urlString: String) {
         //        1. Create a URL
         
         if let url = URL(string: urlString) {
@@ -29,47 +30,51 @@ struct WeatherManager {
             
             let session = URLSession(configuration: .default)
             
-            //        3. Give the session a task
+            //        3. Give the session a task/ 이 단계가 url을 따라가서 거기에 있는 데이터를 가져오는 단계이다. session이 url을 받아오고 task가 받아온 url에 접속해 그 데이터를 받아오면 closure가 동작한다.
             
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error!)
+//                    여기는 error를 왜 unwrap하지?
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 
                 if let safeData = data {
-                    //closure 내부에서는 현재 클래스를 가리키는 메서드라도 self를 붙인다.
-                    if let weather = self.parseJSON(weatherData: safeData ) {
-//                        이게 closure 안에 있다고 하는데 closure가 어디서부터 시작하는거지?
-                        self.delegate?.didUpdateWeather(weather: weather )
+                    //closure 내부에서 method를 call할 때 self.을 붙인다.
+                    if let weather = self.parseJSON(safeData) {
+                        self.delegate?.didUpdateWeather(self, weather: weather)
                     }
                 }
             }
             
             //        4. Start the task
-            //           resume()는 새로 이니셜라이징 된 업무는 지연된 상태로 시작하는데, 그 업무를 시작하기 위해서는 resume() 메서드가 필요하다.
+            //           resume()는 새로 이니셜라이징 된 업무는 정지된 상태로 시작하는데, 그 업무를 시작하기 위해서는 resume() 메서드가 필요하다. 이 단계는 'enter'키를 누르는 단계이므 로
             task.resume()
         }
         
     }
-    func parseJSON(weatherData: Data)-> WeatherModel?  {
+    
+    //    weatherData parameter에 들어가는 data는 우리가 networking의 datatask를 통해 받아온 data이다.
+    func parseJSON(_ weatherData: Data)-> WeatherModel?  {
         let decoder = JSONDecoder()
         do {
             //        WeatherData 자리는 data type이 들어가는데 WeatherData.self를 함으로써 WeatherData는 object에서 data type이 된다.
-            //            decode 메서드가 throw를 하는데, 이는 데이터가 JSON이 아닌 경우 오류를 throw함을 의미한다.
+            // decode는 throw라는 키워드를 갖는데, 이는 error가 있을 수 있다는 것이고, error를 throw하기 위해 try와 do를 사용하며, throw한 error를 catch하는데 catch 키워드가 사용된다.
+            //           decode 메서드는 output을 갖는데, 이를 let decodedData가 받는다.
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             //            decodedData의 data type이 Weatherdata라서 이는 name property를 받아올 수 있다.
-            print(decodedData.main.temp)
+            print(decodedData.main.temp) 
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
             
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
-             
+            
             return weather
             
         } catch {
-            print(error)
+//            여기는 왜 error를 unwrap 안 하지?
+            delegate?.didFailWithError(error: error)
             return nil
         }
     }
