@@ -21,10 +21,10 @@ struct WeatherModel {
     
 //    아래의 property는 comp uted property라 불리고 이 property가 output or return해야하는 값을 {}안에 있는  return 뒤에 적어준다.
     var conditionName: String {
-         switch conditionId  {
+          switch conditionId  {
         case 200 ... 232:
             return "could.bolt"
-        case 300 ... 321, 520 ... 513:
+        case 300 ... 321:
             return "cloud.drizzle"
         case 500 ... 531:
             return "cloud.rain"
