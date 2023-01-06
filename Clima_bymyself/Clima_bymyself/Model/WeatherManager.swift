@@ -38,7 +38,7 @@ struct WeatherManager {
             
             //        3. Give the session a task/ 이 단계가 url을 따라가서 거기에 있는 데이터를 가져오는 단계이다. session이 url을 받아오고 task가 받아온 url에 접속해 그 데이터를 받아오면 closure가 동작한다.
             
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with : url) { (data, response, error)   in
                 if error != nil {
 //                    여기는 error를 왜 unwrap하지?
                     self.delegate?.didFailWithError(error: error!)
@@ -69,7 +69,6 @@ struct WeatherManager {
             //           decode 메서드는 output을 갖는데, 이를 let decodedData가 받는다.
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             //            decodedData의 data type이 Weatherdata라서 이는 name property를 받아올 수 있다.
-            print(decodedData.main.temp) 
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name

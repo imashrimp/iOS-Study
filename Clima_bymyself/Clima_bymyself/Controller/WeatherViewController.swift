@@ -26,7 +26,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        아래 코드가 locationManager.requestLocation() 보다 아래에 있으면 error가 생긴다. => 왜? 이유가 뭔데?
+//        아래 코드가 locationManager.requestLocation() 보다 아래에 있으면 error가 생긴다. => 아래의 코드가 선행되어야 현재 class에서 CLLocationManager class가 가지는 메서드인 requestLocation을 실행 할 수 있다.
+//        아래 코드는 locationManager의 delegate(bleep)가 현재 class(viewDidLoad)임을 뜻한다. => app을 실행하고 화면이 뜨면 사용자 위치정보를 받오는 것을 알리는 bleep가 viewDidLoad임을 뜻한다.
         locationManager.delegate = self
 //아래 코드는 gps 사용 허가창 띄우는 용도
         locationManager.requestWhenInUseAuthorization()
@@ -54,13 +55,10 @@ class WeatherViewController: UIViewController {
 
 extension WeatherViewController: UITextFieldDelegate {
     @IBAction func searchPressed(_ sender: UIButton) {
-        
         searchTextField.endEditing(true)
-        //        searchTextField.text를 느낌표(!)로 언래핑하는 이유는 textfield가 빈 상태로 값을 전달 할 수 있기 때문에 searchTextField.text는 optional 값이기 때문이다.
-        print(searchTextField.text!)
     }
     
-    //    아래 메서드는 delegate에 'return' 버튼이 눌렸을 때 text field가 무언가를 해야하는지 물어보게 한다. 그리고 아래의 메서드는 return 버튼에 대한 IBAction과 같다.
+    //    아래 메서드는 delegate(현재 class)에 'return' 버튼이 눌렸을 때 text field가 무언가를 해야하는지 물어보게 한다. 그리고 아래의 메서드는 return 버튼에 대한 IBAction과 같다.
     /*
      위의 UITextFieldDelegate, searchTextField.delegate = self로 아래 메서드를 만들고 이 메서드는 delegate(현재 class)에 text field가 button pressed의 과정을 처리해야하는지 묻는다.
      => text field: "VC야 유저가 return키를 눌렀는데 뭘 할까?"
@@ -69,7 +67,6 @@ extension WeatherViewController: UITextFieldDelegate {
      */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
         return true
     }
     
@@ -92,7 +89,7 @@ extension WeatherViewController: UITextFieldDelegate {
      */
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        //        if let은 optional을 unwrap하기 위함이다.
+        //        if let은 optional binding이다.
         if let city = searchTextField.text {
             //            WeatherManager에서 fetchWeather 메서드의 cityName에 text field에 입력된 도시 이름을 가져오기 위한 impement이다.
             weatherManager.fetchWeather(cityName: city)
@@ -106,27 +103,26 @@ extension WeatherViewController: UITextFieldDelegate {
 //MARK: - WeatherManagerDelegate
 
 extension WeatherViewController: WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+    func didUpdateWeather(_  weatherManager: WeatherManager, weather: WeatherModel) {
         //        아래의 DispatchQueue는 날씨 데이터를 불러오는건 background에서 이뤄지기 때문에 시간이 걸리는데 이때 app 사용자는 app이 멈췄다고 느낄 수 있다 그래서 아래의 메서드를 작성해주는 것이고 '{}'안의 self는 closure라서 써주는 것이다.
-//        weather.는 Weather Model에서 오는건데 왜지?
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.cityName
         }
         
-    } 
+    }
     
     func didFailWithError(error: Error) {
-        print(error )
-    }
+        print(error)
+    } 
 }
 
 //MARK: - CLLocationManagerDelegate
 
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        위의 메서드에서 locations parameter가 위치정보를 받아오고, 이는 array이기 때문에 .last가 가장 최근에 받아온 위치정보를 가져오게 한다. 그리고 location이 optional이라 binding을 해준다.
+//         위의 메서드에서 locations parameter가 위치정보를 받아오고, 이는 array이기 때문에 .last가 가장 최근에 받아온 위치정보를 가져오게 한다. 그리고 location이 optional이라 binding을 해준다.
         if let location = locations.last {
 //            위치버튼을 누르면 내가 있는 위치의 날씨정보를 받아오기 위해서는 앱이 작동되었을 때나 위치버튼을 눌렀을 때 위치정보를 새로 받아오는 걸 멈춰야한다. 이를 위해 아래의 코드 한 줄이 필요하다.
             locationManager.stopUpdatingHeading()
@@ -137,6 +133,6 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error )
+        print(error)
     }
 }

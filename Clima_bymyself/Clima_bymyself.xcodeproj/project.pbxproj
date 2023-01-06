@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1743C8552966876C006F2252 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		17B4E19B295CFC3C00940758 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		17B4E19F295D6A3900940758 /* Weather Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weather Data.swift"; sourceTree = "<group>"; };
 		17B4E1A1295EBDF600940758 /* Weather Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weather Model.swift"; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		17C6A309295420AB004E7234 = {
 			isa = PBXGroup;
 			children = (
+				1743C8552966876C006F2252 /* README.md */,
 				17C6A314295420AB004E7234 /* Clima_bymyself */,
 				17C6A313295420AB004E7234 /* Products */,
 			);
