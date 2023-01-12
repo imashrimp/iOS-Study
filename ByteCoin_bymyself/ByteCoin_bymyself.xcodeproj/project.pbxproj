@@ -14,6 +14,7 @@
 		171BF803296808B30002F8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171BF802296808B30002F8EC /* Assets.xcassets */; };
 		171BF806296808B30002F8EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171BF804296808B30002F8EC /* LaunchScreen.storyboard */; };
 		171BF82C296817380002F8EC /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171BF82B296817380002F8EC /* CoinManager.swift */; };
+		173FD954296FD50D00AEEA30 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FD953296FD50D00AEEA30 /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		171BF80C296808B30002F8EC /* ByteCoin_bymyselfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByteCoin_bymyselfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		171BF816296808B30002F8EC /* ByteCoin_bymyselfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ByteCoin_bymyselfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		171BF82B296817380002F8EC /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
+		173FD953296FD50D00AEEA30 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				171BF82B296817380002F8EC /* CoinManager.swift */,
+				173FD953296FD50D00AEEA30 /* CoinData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				171BF82C296817380002F8EC /* CoinManager.swift in Sources */,
 				171BF7FE296808B20002F8EC /* ViewController.swift in Sources */,
+				173FD954296FD50D00AEEA30 /* CoinData.swift in Sources */,
 				171BF7FA296808B20002F8EC /* AppDelegate.swift in Sources */,
 				171BF7FC296808B20002F8EC /* SceneDelegate.swift in Sources */,
 			);
